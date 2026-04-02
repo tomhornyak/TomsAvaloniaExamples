@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:vm="using:CanvasTest.ViewModels"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:CanvasTest"
+		mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+		Width="400" Height="300"
+		x:Class="CanvasTest.Views.MainWindow"
+		x:DataType="vm:MainWindowViewModel"
+		Icon="/Assets/avalonia-logo.ico">
+
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+		to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+			<Button Content="Add Tile" Command="{Binding AddTileCommand}" Margin="5"/>
+			<Button Content="Move Tile" Command="{Binding MoveTileCommand}" Margin="5"/>
+		</StackPanel>
+		<ItemsControl Grid.Row="1" ItemsSource="{Binding TileList}">
+			<ItemsControl.ItemsPanel>
+				<ItemsPanelTemplate>
+					<Canvas Width="400" Height="220" Background="Gray" Margin="3"/>
+				</ItemsPanelTemplate>
+			</ItemsControl.ItemsPanel>
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<Rectangle Fill="Green" Height="{Binding Size}" Width="{Binding Size}"/>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+			<ItemsControl.Styles>
+				<Style Selector="ContentPresenter"  x:DataType="local:Tile">
+					<Setter Property="Canvas.Left" Value="{Binding TopX}"/>
+					<Setter Property="Canvas.Top" Value="{Binding TopY}"/>
+				</Style>
+			</ItemsControl.Styles>
+		</ItemsControl>
+	</Grid>
+
+</Window>
