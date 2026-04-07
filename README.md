@@ -1,16 +1,7 @@
 # AvCanvasTest
 
-This repository contains 2 solutions.
+This repository contains 3 solutions.
 
-1. CanvasTest is a modified demo from AvaloniaUI.
-2. CanvasTest2 is an example of what I am trying to achive. Add moveable controls to a canvas.
-
-I have encountered the following issues.
-
-1. The Tiles added in the view model constructor Do not appear, althoughg the Accerate Developer tools shows the itemes in the list. Also, clicking the "Get Canvas" button will show that the canvas has the tiles as children.
-2. Clicking the add and move buttons don't diplay anything either. But again the Tile is on the canvas.
-3. All the change events seems to be firing properly.
-
-Have I discovered a bug or limitation of AvaloniaUI? Or am I doing something wrong?
-I am porting a WPF app that has no problems displaying controls on a canvas.
-Also note, previously my app was manipulating the canvas directly. But then I drank the Kool-Aid(r) and decided to use the MVVM approach as it made testing easier.
+1. CanvasTest is a modified demo from AvaloniaUI placing and moving shapes on a canvas. Click "Add Tile" to add a tile and "Move Tile" to move it.
+2. CanvasTest2 is an example placing and moving 2 different types of controls. Clicking the buttons works as above. Note, the ICustomControl cannot be referenced in the in the .axaml, it needs a class that is an ICustomControl. LaurentInSeattle helped me with this one.
+3. AvMessageTest is an example of an MVVM pattern to have the view request a file name from the viewmmodel, which requests the view to open the StorageProvider.OpenFilePickerAsync and pass the file information back to the viewmodel. Which can then be passed to the model. It is an example of using async messaging from the community mvvm package. I cold not find a working example, so with the help of the fine folks in the Avaloina discussion group (especially MattKatz6), I wrote a working example.

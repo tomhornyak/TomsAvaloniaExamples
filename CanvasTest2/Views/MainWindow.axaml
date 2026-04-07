@@ -24,7 +24,6 @@
 		<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
 			<Button Content="Add Tile" Command="{Binding AddTileCommand}" Margin="5"/>
 			<Button Content="Move Tile" Command="{Binding MoveTileCommand}" Margin="5"/>
-			<Button Content="Get Canvas" Click="GetCanvas_Click" Margin="5"/>
 		</StackPanel>
 		<ItemsControl Name="TilesItemControl" Grid.Row="1" ItemsSource="{Binding TileList}">
 			<ItemsControl.ItemsPanel>

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="AvMessageTest/AvMessageTest.csproj" />
+  <Project Path="CanvasTest/CanvasTest.csproj" />
+  <Project Path="CanvasTest2/CanvasTest2.csproj" />
+</Solution>

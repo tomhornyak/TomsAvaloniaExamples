@@ -1,8 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Data.Common;
-using System.Windows.Input;
 
 namespace CanvasTest.ViewModels
 {

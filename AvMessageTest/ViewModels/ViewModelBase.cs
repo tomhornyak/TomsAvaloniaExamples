@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace CanvasTest.ViewModels
+namespace AvMessageTest.ViewModels
 {
     public abstract class ViewModelBase : ObservableObject
     {

@@ -4,7 +4,7 @@ using Avalonia.Media;
 
 namespace CanvasTest2
 {
-    public partial class Tile : TextBlock
+    public partial class Tile : TextBlock, ICustomControl
     {
         public static readonly StyledProperty<double> TopXProperty =
         AvaloniaProperty.Register<Tile, double>(nameof(TopX), defaultValue: -1);
